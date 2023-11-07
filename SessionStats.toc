@@ -1,0 +1,9 @@
+## Interface: 11404
+## Title: |cff00ccffSessionStats|r
+## Version: 0.8beta
+## Notes: Basic addon to show numerical changes during recent play session
+## Author: Rumibeans
+## DefaultState: enabled
+
+## libs ##
+
