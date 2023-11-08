@@ -27,4 +27,37 @@ Solution: Lua reads from left to right and has a specific way to handle self-ref
 print(table:function_name()); <br />
 Colon only used with function calls and will automatically supply an invisible self-referential variable to be used with function call
 
+'''
+-- Understanding Lua tables with stack abstract data structure and functions within hash table
+local options = {
+    -- array table (with index): 
 
+    -- hash table (with String key): 
+    push = function(self, arg)
+        local n = #self; 
+        self[n + 1] = arg; 
+    end, 
+
+    pop = function(self)
+        local n = #self; 
+        if (n > 0) then 
+            local rtn = self[n]; 
+            self[n] = nil; 
+            return rtn; 
+        end
+    end, 
+}
+
+print(options:pop()); -- nil
+options:push(50); 
+options:push(4); 
+options:push(100); 
+options:push("hello"); 
+options:push({2, 3, 4, 5, 6});
+
+print(options:pop()); -- Prints memory address table: 0000050GBAK504
+print(options:pop()); -- hello
+print(options:pop()); -- 100
+print(options:pop()); -- 4
+print(options:pop()); -- 50
+'''
