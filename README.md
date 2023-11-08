@@ -28,7 +28,6 @@ print(table:function_name()); <br />
 Colon only used with function calls and will automatically supply an invisible self-referential variable to be used with function call
 
 '''
--- Understanding Lua tables with stack abstract data structure and functions within hash table
 local options = {
     -- array table (with index): 
 
